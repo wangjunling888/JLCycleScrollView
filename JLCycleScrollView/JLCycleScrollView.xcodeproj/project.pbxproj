@@ -13,8 +13,6 @@
 		3331FED41E78E61300D95915 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3331FED21E78E61300D95915 /* Main.storyboard */; };
 		3331FED61E78E61300D95915 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3331FED51E78E61300D95915 /* Assets.xcassets */; };
 		3331FED91E78E61300D95915 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3331FED71E78E61300D95915 /* LaunchScreen.storyboard */; };
-		3331FEE31E78E68000D95915 /* JLCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3331FEE21E78E68000D95915 /* JLCycleScrollView.m */; };
-		3331FEE61E78E6B100D95915 /* JLCycleScrollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3331FEE51E78E6B100D95915 /* JLCycleScrollCell.m */; };
 		3331FF101E78E71900D95915 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3331FEEA1E78E71900D95915 /* MKAnnotationView+WebCache.m */; };
 		3331FF111E78E71900D95915 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 3331FEEC1E78E71900D95915 /* NSData+ImageContentType.m */; };
 		3331FF121E78E71900D95915 /* NSImage+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3331FEEE1E78E71900D95915 /* NSImage+WebCache.m */; };
@@ -46,6 +44,8 @@
 		3331FF491E7912BA00D95915 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3331FF3F1E7912BA00D95915 /* ViewController+MASAdditions.m */; };
 		3331FF4D1E79331500D95915 /* UIView+WJLFrameExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3331FF4C1E79331500D95915 /* UIView+WJLFrameExtension.m */; };
 		3331FF4F1E7993FA00D95915 /* arctic-139395_1280.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3331FF4E1E7993FA00D95915 /* arctic-139395_1280.jpg */; };
+		3331FF5A1E7A990400D95915 /* JLCycleScrollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3331FF571E7A990400D95915 /* JLCycleScrollCell.m */; };
+		3331FF5B1E7A990400D95915 /* JLCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3331FF591E7A990400D95915 /* JLCycleScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,10 +59,6 @@
 		3331FED51E78E61300D95915 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3331FED81E78E61300D95915 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3331FEDA1E78E61300D95915 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3331FEE11E78E68000D95915 /* JLCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLCycleScrollView.h; sourceTree = "<group>"; };
-		3331FEE21E78E68000D95915 /* JLCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLCycleScrollView.m; sourceTree = "<group>"; };
-		3331FEE41E78E6B100D95915 /* JLCycleScrollCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLCycleScrollCell.h; sourceTree = "<group>"; };
-		3331FEE51E78E6B100D95915 /* JLCycleScrollCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLCycleScrollCell.m; sourceTree = "<group>"; };
 		3331FEE91E78E71900D95915 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		3331FEEA1E78E71900D95915 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		3331FEEB1E78E71900D95915 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -130,6 +126,10 @@
 		3331FF4B1E79331500D95915 /* UIView+WJLFrameExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WJLFrameExtension.h"; sourceTree = "<group>"; };
 		3331FF4C1E79331500D95915 /* UIView+WJLFrameExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WJLFrameExtension.m"; sourceTree = "<group>"; };
 		3331FF4E1E7993FA00D95915 /* arctic-139395_1280.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "arctic-139395_1280.jpg"; sourceTree = "<group>"; };
+		3331FF561E7A990400D95915 /* JLCycleScrollCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLCycleScrollCell.h; sourceTree = "<group>"; };
+		3331FF571E7A990400D95915 /* JLCycleScrollCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLCycleScrollCell.m; sourceTree = "<group>"; };
+		3331FF581E7A990400D95915 /* JLCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLCycleScrollView.h; sourceTree = "<group>"; };
+		3331FF591E7A990400D95915 /* JLCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLCycleScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,11 +188,8 @@
 		3331FEE01E78E65C00D95915 /* JLCycleScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				3331FF551E7A990400D95915 /* JLCycleScrollView */,
 				3331FEE71E78E71900D95915 /* ThirdLib */,
-				3331FEE11E78E68000D95915 /* JLCycleScrollView.h */,
-				3331FEE21E78E68000D95915 /* JLCycleScrollView.m */,
-				3331FEE41E78E6B100D95915 /* JLCycleScrollCell.h */,
-				3331FEE51E78E6B100D95915 /* JLCycleScrollCell.m */,
 			);
 			path = JLCycleScrollView;
 			sourceTree = "<group>";
@@ -294,6 +291,17 @@
 			path = "UIView+WJLFrameExtension";
 			sourceTree = "<group>";
 		};
+		3331FF551E7A990400D95915 /* JLCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				3331FF561E7A990400D95915 /* JLCycleScrollCell.h */,
+				3331FF571E7A990400D95915 /* JLCycleScrollCell.m */,
+				3331FF581E7A990400D95915 /* JLCycleScrollView.h */,
+				3331FF591E7A990400D95915 /* JLCycleScrollView.m */,
+			);
+			path = JLCycleScrollView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -376,7 +384,6 @@
 				3331FF221E78E71900D95915 /* UIView+WebCacheOperation.m in Sources */,
 				3331FF1D1E78E71900D95915 /* UIImage+MultiFormat.m in Sources */,
 				3331FF1A1E78E71900D95915 /* SDWebImagePrefetcher.m in Sources */,
-				3331FEE61E78E6B100D95915 /* JLCycleScrollCell.m in Sources */,
 				3331FF131E78E71900D95915 /* SDImageCache.m in Sources */,
 				3331FF491E7912BA00D95915 /* ViewController+MASAdditions.m in Sources */,
 				3331FF471E7912BA00D95915 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
@@ -389,7 +396,6 @@
 				3331FF161E78E71900D95915 /* SDWebImageDecoder.m in Sources */,
 				3331FECE1E78E61300D95915 /* AppDelegate.m in Sources */,
 				3331FF1F1E78E71900D95915 /* UIImageView+HighlightedWebCache.m in Sources */,
-				3331FEE31E78E68000D95915 /* JLCycleScrollView.m in Sources */,
 				3331FF171E78E71900D95915 /* SDWebImageDownloader.m in Sources */,
 				3331FF481E7912BA00D95915 /* View+MASAdditions.m in Sources */,
 				3331FF411E7912BA00D95915 /* MASConstraint.m in Sources */,
@@ -398,6 +404,8 @@
 				3331FF111E78E71900D95915 /* NSData+ImageContentType.m in Sources */,
 				3331FF451E7912BA00D95915 /* MASViewConstraint.m in Sources */,
 				3331FECB1E78E61300D95915 /* main.m in Sources */,
+				3331FF5A1E7A990400D95915 /* JLCycleScrollCell.m in Sources */,
+				3331FF5B1E7A990400D95915 /* JLCycleScrollView.m in Sources */,
 				3331FF461E7912BA00D95915 /* NSArray+MASAdditions.m in Sources */,
 				3331FF191E78E71900D95915 /* SDWebImageManager.m in Sources */,
 				3331FF121E78E71900D95915 /* NSImage+WebCache.m in Sources */,
