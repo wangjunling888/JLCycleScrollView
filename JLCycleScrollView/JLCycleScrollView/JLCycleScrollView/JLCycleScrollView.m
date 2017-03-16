@@ -69,7 +69,6 @@ static NSString *cycleScrollCellReuseID = @"cycleScrollCellReuseID";
         [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
         
     });
-    
 }
 
 - (void)setupUI {
