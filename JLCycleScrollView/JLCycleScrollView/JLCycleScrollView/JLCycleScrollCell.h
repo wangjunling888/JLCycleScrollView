@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@class JLCycleScrollModel;
 
 @interface JLCycleScrollCell : UICollectionViewCell
 @property (nonatomic, strong) UIImage *placeholderImg;
-@property (nonatomic, strong) JLCycleScrollModel *model;
+@property (nonatomic, copy) NSString *imageURLStr;
 
 @end

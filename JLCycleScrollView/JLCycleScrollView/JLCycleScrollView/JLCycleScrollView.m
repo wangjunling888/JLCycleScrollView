@@ -64,6 +64,7 @@ static NSString *cycleScrollCellReuseID = @"cycleScrollCellReuseID";
     _pageColor = [UIColor whiteColor];
     _currentPageColor = [UIColor redColor];
     
+    //初始化collection位置为数据的中间位置
     dispatch_async(dispatch_get_main_queue(), ^{// 异步方法可以等主线程不忙时再执行, 此时self.frame.size的值可以取到; 而且
         self.flowLayout.itemSize = self.frame.size;
         NSInteger item = 0;
@@ -99,7 +100,7 @@ static NSString *cycleScrollCellReuseID = @"cycleScrollCellReuseID";
 
 #pragma mark - Setter
 //数据源设置
-- (void)setDataArr:(NSArray<JLCycleScrollModel *> *)dataArr {
+- (void)setDataArr:(NSArray*)dataArr {
     _dataArr = dataArr;
     
     [self invalidateTimer];
@@ -140,8 +141,6 @@ static NSString *cycleScrollCellReuseID = @"cycleScrollCellReuseID";
     _placeholerImg = placeholerImg;
     self.placeholerImgview.image = placeholerImg;
 }
-
-
 
 //pageControl相关
 - (void)setPageColor:(UIColor *)pageColor {
@@ -263,14 +262,13 @@ static NSString *cycleScrollCellReuseID = @"cycleScrollCellReuseID";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     JLCycleScrollCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cycleScrollCellReuseID forIndexPath:indexPath];
     cell.placeholderImg = self.placeholerImg;
-    cell.model = self.dataArr[[self pageControlIndexWithCurrentCellIndex:indexPath.item]];
+    cell.imageURLStr = self.dataArr[[self pageControlIndexWithCurrentCellIndex:indexPath.item]];
     return cell;
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger index = [self pageControlIndexWithCurrentCellIndex:indexPath.item];
-    JLCycleScrollModel *model = self.dataArr[index];
     if (self.currentDidClickedBlock) {
-        self.currentDidClickedBlock(index, model);
+        self.currentDidClickedBlock(index);
     }
 }
 

@@ -8,14 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-#import "JLCycleScrollModel.h"
 
-typedef void(^JLCycleScrollDidClickedBlock)(NSInteger index, JLCycleScrollModel *model);
+typedef void(^JLCycleScrollDidClickedBlock)(NSInteger index);
 
 
 @interface JLCycleScrollView : UIView
 
-@property (nonatomic, strong) NSArray <JLCycleScrollModel *> *dataArr;
+@property (nonatomic, strong) NSArray *dataArr;//图片链接或名称数组
 
 @property (nonatomic, strong) UIImage *placeholerImg;
 

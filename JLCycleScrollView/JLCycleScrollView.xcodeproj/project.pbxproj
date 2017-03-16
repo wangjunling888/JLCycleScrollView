@@ -34,7 +34,6 @@
 		3331FF201E78E71900D95915 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3331FF0B1E78E71900D95915 /* UIImageView+WebCache.m */; };
 		3331FF211E78E71900D95915 /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3331FF0D1E78E71900D95915 /* UIView+WebCache.m */; };
 		3331FF221E78E71900D95915 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3331FF0F1E78E71900D95915 /* UIView+WebCacheOperation.m */; };
-		3331FF251E78E84F00D95915 /* JLCycleScrollModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3331FF241E78E84F00D95915 /* JLCycleScrollModel.m */; };
 		3331FF401E7912BA00D95915 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 3331FF281E7912BA00D95915 /* MASCompositeConstraint.m */; };
 		3331FF411E7912BA00D95915 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 3331FF2B1E7912BA00D95915 /* MASConstraint.m */; };
 		3331FF421E7912BA00D95915 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3331FF2D1E7912BA00D95915 /* MASConstraintMaker.m */; };
@@ -103,8 +102,6 @@
 		3331FF0D1E78E71900D95915 /* UIView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCache.m"; sourceTree = "<group>"; };
 		3331FF0E1E78E71900D95915 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		3331FF0F1E78E71900D95915 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
-		3331FF231E78E84F00D95915 /* JLCycleScrollModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLCycleScrollModel.h; sourceTree = "<group>"; };
-		3331FF241E78E84F00D95915 /* JLCycleScrollModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLCycleScrollModel.m; sourceTree = "<group>"; };
 		3331FF271E7912BA00D95915 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		3331FF281E7912BA00D95915 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
 		3331FF291E7912BA00D95915 /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -196,8 +193,6 @@
 				3331FEE21E78E68000D95915 /* JLCycleScrollView.m */,
 				3331FEE41E78E6B100D95915 /* JLCycleScrollCell.h */,
 				3331FEE51E78E6B100D95915 /* JLCycleScrollCell.m */,
-				3331FF231E78E84F00D95915 /* JLCycleScrollModel.h */,
-				3331FF241E78E84F00D95915 /* JLCycleScrollModel.m */,
 			);
 			path = JLCycleScrollView;
 			sourceTree = "<group>";
@@ -397,7 +392,6 @@
 				3331FEE31E78E68000D95915 /* JLCycleScrollView.m in Sources */,
 				3331FF171E78E71900D95915 /* SDWebImageDownloader.m in Sources */,
 				3331FF481E7912BA00D95915 /* View+MASAdditions.m in Sources */,
-				3331FF251E78E84F00D95915 /* JLCycleScrollModel.m in Sources */,
 				3331FF411E7912BA00D95915 /* MASConstraint.m in Sources */,
 				3331FF421E7912BA00D95915 /* MASConstraintMaker.m in Sources */,
 				3331FF141E78E71900D95915 /* SDImageCacheConfig.m in Sources */,
@@ -566,6 +560,7 @@
 				3331FEDF1E78E61300D95915 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
