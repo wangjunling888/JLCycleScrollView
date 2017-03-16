@@ -30,9 +30,10 @@
     JLCycleScrollModel *model1 = [[JLCycleScrollModel alloc] init];
     model1.imgURL = @"https://cdn.pixabay.com/photo/2016/02/07/19/50/snow-1185474_1280.jpg";
     JLCycleScrollModel *model2 = [[JLCycleScrollModel alloc] init];
-    model2.imgURL = @"https://cdn.pixabay.com/photo/2015/08/25/22/38/bridge-907812_1280.jpg";
-    
+    model2.imgURL = @"arctic-139395_1280.jpg";
+    self.bannerView.currentPageColor = [UIColor blueColor];
     self.bannerView.dataArr = @[model1, model2];
+    self.bannerView.autoScrollTimeInterval = 5;
     //self.bannerView.dataArr = nil;//测试placeholerImg是否可用;
     
 }
@@ -44,7 +45,7 @@
             NSLog(@"%zd",index);
         }];
         _bannerView.placeholerImg = [UIImage imageNamed:@"arctic-139395_1280.jpg"];
-        _bannerView.infiniteLoop = NO;
+       // _bannerView.infiniteLoop = NO;
 //        _bannerView.autoScroll = NO;
     }
     return _bannerView;

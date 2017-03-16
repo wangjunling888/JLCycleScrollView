@@ -47,16 +47,23 @@ static NSString *cycleScrollCellReuseID = @"cycleScrollCellReuseID";
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setupUI];
+       
         [self initData];
+        [self setupUI];
     }
     return self;
 }
 //初始化数据
 - (void)initData {
+    //滚动控制设置初始化
     _autoScroll = YES;
     _infiniteLoop = YES;
     _autoScrollTimeInterval = 2.0;
+    
+    //pageControl页面初始化设置
+    _pageColor = [UIColor whiteColor];
+    _currentPageColor = [UIColor redColor];
+    
     dispatch_async(dispatch_get_main_queue(), ^{// 异步方法可以等主线程不忙时再执行, 此时self.frame.size的值可以取到; 而且
         self.flowLayout.itemSize = self.frame.size;
         NSInteger item = 0;
@@ -91,7 +98,7 @@ static NSString *cycleScrollCellReuseID = @"cycleScrollCellReuseID";
 }
 
 #pragma mark - Setter
-
+//数据源设置
 - (void)setDataArr:(NSArray<JLCycleScrollModel *> *)dataArr {
     _dataArr = dataArr;
     
@@ -113,6 +120,7 @@ static NSString *cycleScrollCellReuseID = @"cycleScrollCellReuseID";
     self.pageControl.numberOfPages = _dataArr.count;
 
 }
+
 //自动滚动
 -(void)setAutoScroll:(BOOL)autoScroll{
     _autoScroll = autoScroll;
@@ -123,10 +131,28 @@ static NSString *cycleScrollCellReuseID = @"cycleScrollCellReuseID";
         [self setupTimer];
     }
 }
+- (void)setAutoScrollTimeInterval:(NSInteger)autoScrollTimeInterval {
+    _autoScrollTimeInterval = autoScrollTimeInterval;
+    [self setAutoScroll:self.autoScroll];
+}
+
 - (void)setPlaceholerImg:(UIImage *)placeholerImg {
     _placeholerImg = placeholerImg;
     self.placeholerImgview.image = placeholerImg;
 }
+
+
+
+//pageControl相关
+- (void)setPageColor:(UIColor *)pageColor {
+    _pageColor = pageColor;
+    self.pageControl.pageIndicatorTintColor = _pageColor;
+}
+- (void)setCurrentPageColor:(UIColor *)currentPageColor {
+    _currentPageColor = currentPageColor;
+    self.pageControl.currentPageIndicatorTintColor = _currentPageColor;
+}
+
 
 
 #pragma mark - Getter
@@ -164,8 +190,8 @@ static NSString *cycleScrollCellReuseID = @"cycleScrollCellReuseID";
 - (UIPageControl *)pageControl {
     if (_pageControl == nil) {
         _pageControl = [[UIPageControl alloc] init];
-        _pageControl.currentPageIndicatorTintColor = [UIColor redColor];
-        _pageControl.pageIndicatorTintColor = [UIColor whiteColor];
+        _pageControl.currentPageIndicatorTintColor = _currentPageColor;
+        _pageControl.pageIndicatorTintColor = _pageColor;
         _pageControl.userInteractionEnabled = NO;
         _pageControl.currentPage = 0;
     }

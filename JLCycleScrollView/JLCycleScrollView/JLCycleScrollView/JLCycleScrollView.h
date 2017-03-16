@@ -19,13 +19,17 @@ typedef void(^JLCycleScrollDidClickedBlock)(NSInteger index, JLCycleScrollModel 
 
 @property (nonatomic, strong) UIImage *placeholerImg;
 
-///是否无限播放, 暂时有bug, 等待修复
+///是否无限播放, 默认为 YES
 @property (nonatomic, assign) BOOL infiniteLoop;
 ///是否自动滚动, 默认为 YES
 @property (nonatomic, assign) BOOL autoScroll;
 ///自动滚动间隔, 单位s, 默认2s
 @property (nonatomic, assign) NSInteger autoScrollTimeInterval;
 
+
+/***************pageController样式设置*****************/
+@property (nonatomic, strong) UIColor *currentPageColor;
+@property (nonatomic, strong) UIColor *pageColor;
 
 #pragma mark - Function
 + (instancetype)cycleScrollViewWithModelArr:(NSArray *)modelArr

@@ -38,7 +38,12 @@
 
 - (void)setModel:(JLCycleScrollModel *)model {
     _model = model;
-    [self.imgView sd_setImageWithURL:[NSURL URLWithString:_model.imgURL] placeholderImage:self.placeholderImg];
+    if ([_model.imgURL hasPrefix:@"http"]) {
+         [self.imgView sd_setImageWithURL:[NSURL URLWithString:_model.imgURL] placeholderImage:self.placeholderImg];
+    } else {//本地图片  
+        self.imgView.image = [UIImage imageNamed:_model.imgURL];
+    }
+   
     
 }
 - (UIImageView *)imgView {
