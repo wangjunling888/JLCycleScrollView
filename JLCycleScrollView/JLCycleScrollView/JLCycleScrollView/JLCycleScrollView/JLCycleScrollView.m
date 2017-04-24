@@ -33,10 +33,11 @@ static NSString *cycleScrollCellReuseID = @"cycleScrollCellReuseID";
 
 @implementation JLCycleScrollView
 
-+ (instancetype)cycleScrollViewWithModelArr:(NSArray *)modelArr
++ (instancetype)cycleScrollViewWithFrame:(CGRect)frame
+                               imagesArr:(NSArray *)modelArr
                      currentDidClickedBlock:(JLCycleScrollDidClickedBlock)currentDidClickedBlock {
 
-    JLCycleScrollView *cycleScrollView = [[self alloc] init];
+    JLCycleScrollView *cycleScrollView = [[self alloc] initWithFrame:frame];
     
     cycleScrollView.currentDidClickedBlock = currentDidClickedBlock;
     cycleScrollView.dataArr = modelArr;
@@ -53,6 +54,8 @@ static NSString *cycleScrollCellReuseID = @"cycleScrollCellReuseID";
     }
     return self;
 }
+
+
 //初始化数据
 - (void)initData {
     //滚动控制设置初始化
@@ -64,19 +67,6 @@ static NSString *cycleScrollCellReuseID = @"cycleScrollCellReuseID";
     _pageColor = [UIColor whiteColor];
     _currentPageColor = [UIColor redColor];
     
-    //初始化collection位置为数据的中间位置
-    dispatch_async(dispatch_get_main_queue(), ^{// 异步方法可以等主线程不忙时再执行, 此时self.frame.size的值可以取到; 而且
-        self.flowLayout.itemSize = self.frame.size;
-        NSInteger item = 0;
-        if (self.infiniteLoop) {
-            item = self.itemCount *0.5;
-        } else {
-            item = 0;
-        }
-        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:item inSection:0];
-        [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
-        
-    });
 }
 
 - (void)setupUI {
@@ -336,18 +326,21 @@ static NSString *cycleScrollCellReuseID = @"cycleScrollCellReuseID";
 }
 - (void)layoutSubviews {
     [super layoutSubviews];
-//    self.flowLayout.itemSize = self.frame.size;//设置collection的布局, 只有在这个地方才能拿到self.frame.size
     
-//    if (self.collectionView.x == 0 && self.dataArr > 0) {
-//        NSInteger item = 0;
-//        if (self.infiniteLoop) {
-//            item = self.itemCount *0.5;
-//        } else {
-//            item = 0;
-//        }
-//        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:item inSection:0];
-//        [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
-//    }
+    //初始化collection位置为数据的中间位置
+    self.flowLayout.itemSize = self.frame.size;//设置collection的布局, 只有在这个地方才能拿到self.frame.size
+    
+    if (self.collectionView.x == 0 && self.dataArr > 0) {
+        NSInteger item = 0;
+        if (self.infiniteLoop) {
+            item = self.itemCount *0.5;
+        } else {
+            item = 0;
+        }
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:item inSection:0];
+        [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+    }
+    
    
 }
 
