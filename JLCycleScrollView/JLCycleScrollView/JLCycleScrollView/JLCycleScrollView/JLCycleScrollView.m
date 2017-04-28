@@ -33,6 +33,8 @@ static NSString *cycleScrollCellReuseID = @"cycleScrollCellReuseID";
 
 @implementation JLCycleScrollView
 
+
+
 + (instancetype)cycleScrollViewWithFrame:(CGRect)frame
                                imagesArr:(NSArray *)modelArr
                      currentDidClickedBlock:(JLCycleScrollDidClickedBlock)currentDidClickedBlock {
@@ -43,6 +45,11 @@ static NSString *cycleScrollCellReuseID = @"cycleScrollCellReuseID";
     cycleScrollView.dataArr = modelArr;
     return cycleScrollView;
 }
++ (instancetype)cycleScrollViewWithFrame:(CGRect)frame
+                  currentDidClickedBlock:(JLCycleScrollDidClickedBlock)currentDidClickedBlock {
+    return [self cycleScrollViewWithFrame:frame imagesArr:nil currentDidClickedBlock:currentDidClickedBlock];
+}
+
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -109,7 +116,24 @@ static NSString *cycleScrollCellReuseID = @"cycleScrollCellReuseID";
         self.pageControl.hidden = YES;
     }
     self.pageControl.numberOfPages = _dataArr.count;
-
+    [self.collectionView reloadData];
+    
+    //初始化collection位置为数据的中间位置
+    self.flowLayout.itemSize = self.frame.size;//设置collection的布局, 只有在这个地方才能拿到self.frame.size
+    if (self.itemCount == 0) {
+        return;
+    }
+    if (self.collectionView.x == 0 && self.dataArr > 0) {
+        NSInteger item = 0;
+        if (self.infiniteLoop) {
+            item = self.itemCount *0.5;
+        } else {
+            item = 0;
+        }
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:item inSection:0];
+        [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+    }
+   
 }
 
 //自动滚动
@@ -326,20 +350,6 @@ static NSString *cycleScrollCellReuseID = @"cycleScrollCellReuseID";
 }
 - (void)layoutSubviews {
     [super layoutSubviews];
-    
-    //初始化collection位置为数据的中间位置
-    self.flowLayout.itemSize = self.frame.size;//设置collection的布局, 只有在这个地方才能拿到self.frame.size
-    
-    if (self.collectionView.x == 0 && self.dataArr > 0) {
-        NSInteger item = 0;
-        if (self.infiniteLoop) {
-            item = self.itemCount *0.5;
-        } else {
-            item = 0;
-        }
-        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:item inSection:0];
-        [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
-    }
     
    
 }

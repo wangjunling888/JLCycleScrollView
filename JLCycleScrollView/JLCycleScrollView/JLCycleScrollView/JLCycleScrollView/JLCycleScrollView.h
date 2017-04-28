@@ -31,7 +31,14 @@ typedef void(^JLCycleScrollDidClickedBlock)(NSInteger index);
 @property (nonatomic, strong) UIColor *pageColor;
 
 #pragma mark - Function
-+ (instancetype)cycleScrollViewWithModelArr:(NSArray *)modelArr
-                     currentDidClickedBlock:(JLCycleScrollDidClickedBlock)currentDidClickedBlock;
+
+
+//如果有本地图片可以直接调用此方法将图片传入
++ (instancetype)cycleScrollViewWithFrame:(CGRect)frame
+                               imagesArr:(NSArray *)modelArr
+                  currentDidClickedBlock:(JLCycleScrollDidClickedBlock)currentDidClickedBlock;
+
++ (instancetype)cycleScrollViewWithFrame:(CGRect)frame
+                  currentDidClickedBlock:(JLCycleScrollDidClickedBlock)currentDidClickedBlock;
 
 @end
